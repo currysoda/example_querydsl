@@ -12,12 +12,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.ToString.Exclude;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = {"id", "username", "age"})
+@ToString
 public class Member {
 	
 	@Id
@@ -29,7 +30,7 @@ public class Member {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "team_id")
-	@ToString.Exclude
+	@Exclude
 	private Team team;
 	
 	public Member(String username) {
