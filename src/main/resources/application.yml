@@ -12,6 +12,7 @@ spring:
             hibernate:
                 #                show_sql: true
                 format_sql: true
+                use_sql_comments: true # querydsl 이 실제로 만드는 JPQL 문을 확인시켜준다.
 
 logging.level:
     org.hibernate.SQL: debug
